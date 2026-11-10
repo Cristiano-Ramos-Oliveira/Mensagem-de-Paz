@@ -1,0 +1,226 @@
+/* --- Reset Global para evitar estouros de tela --- */
+* {
+    box-sizing: border-box;
+}
+
+/* Fundo dinâmico com gradiente a mover-se */
+body {
+    background: linear-gradient(-45deg, #0d1b2a, #1b263b, #415a77, #10002b);
+    background-size: 400% 400%;
+    animation: moverFundo 10s ease infinite;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden; /* TRAVA A BARRA HORIZONTAL (lados) */
+    position: relative;
+    padding-bottom: 70px; /* Dá espaço para o rodapé não colar no conteúdo em telas pequenas */
+}
+
+header {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    color: #f1c40f;
+    text-shadow: 0 2px 8px rgba(250, 248, 248, 0.7);
+    margin: 5px;
+}
+
+/* Animação do gradiente de fundo */
+@keyframes moverFundo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Efeito de luzes e brilhos a moverem-se */
+.luzes {
+    position: fixed; /* Mudado de absolute para fixed para travar na tela */
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: 
+        radial-gradient(circle, rgba(255, 215, 0, 0.4) 2px, transparent 2px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.5) 3px, transparent 3px),
+        radial-gradient(circle, rgba(241, 196, 15, 0.3) 1px, transparent 1px);
+    background-size: 80px 80px, 120px 120px, 60px 60px;
+    background-position: 0 0, 40px 40px, 20px 20px;
+    animation: moverLuzes 12s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animação do movimento das luzes */
+@keyframes moverLuzes {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-120px) rotate(5deg); }
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+/* Cartão com brilho pulsante */
+.card {
+    background: linear-gradient(135deg, #c0392b, #8e44ad);
+    padding: 30px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(241, 196, 15, 0.6), 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    animation: pulsarBrilho 3s ease-in-out infinite alternate;
+}
+
+/* Destaque mais vibrante para a frase impactante */
+.card p .destaque {
+    color: #ffe600;
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(255, 230, 0, 0.8);
+    transition: color 0.3s ease;
+}
+
+.card p .destaque:hover {
+    color: #ffffff;
+}
+
+/* Animação de brilho suave no contorno do cartão */
+@keyframes pulsarBrilho {
+    0% { box-shadow: 0 0 15px rgba(241, 196, 15, 0.4); }
+    100% { box-shadow: 0 0 35px rgba(241, 196, 15, 0.9), 0 0 15px rgba(255, 255, 255, 0.6); }
+}
+
+.card h2 {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 8px 0;
+}
+
+/* Bloco do Botão Home */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);    
+    border-radius: 15px;  
+    box-shadow: 0 4px 20px rgba(46, 204, 113, 0.5);
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; 
+    animation: pulsarBotao 2s infinite alternate;
+}
+
+@keyframes pulsarBotao {
+    0% { transform: scale(1); box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4); }
+    100% { transform: scale(1.02); box-shadow: 0 6px 25px rgba(46, 204, 113, 0.8); }
+}
+
+.home:hover {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    transform: scale(1.05);
+}
+
+.home a {
+    text-decoration: none; 
+    color: #ffffff;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    display: block;
+}
+
+.home h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Rodapé Fixo Discreto na Base --- */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13, 27, 42, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 20;
+    padding: 8px 0;
+}
+
+.rodape-conteudo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.rodape-coluna p {
+    color: aliceblue;
+    font-size: 0.8rem;
+    margin: 0 0 3px 0;
+}
+
+.rodape-coluna ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.rodape-coluna li a {
+    text-decoration: none;
+    color: #f1c40f;
+    font-size: 0.75rem;
+    transition: color 0.2s;
+}
+
+.rodape-coluna li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px 15px;
+    }
+    
+    .card h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .rodape-coluna ul {
+        gap: 10px;
+    }
+}

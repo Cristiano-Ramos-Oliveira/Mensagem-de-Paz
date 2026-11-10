@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato conosco, envie sua mensagem, pedido de oração ou dúvida.">
+    <link rel="canonical" href="https://SEU-DOMINIO-AQUI.com/contato.html">
+    <link rel="stylesheet" href="contato.css">
+    <title>Contato | Mensagens de Paz e Esperança</title>
+</head>
+<body>
+    <header class="sobre">
+        <div class="titulo">
+            <h1>Contato</h1>
+        </div>
+        <nav>
+            <menu>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="home.html#mensagens">Mensagens</a></li>
+                <li><a href="sobre.html">Sobre Mim</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+            </menu>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="card-info">
+            <h2>Fale Conosco</h2>
+            <p>Tem alguma dúvida, testemunho ou pedido de oração? Preencha o formulário abaixo e entraremos em contato.</p>
+
+            <!-- 
+              COMO CONFIGURAR O RECEBIMENTO:
+              1. Acesse o site https://formspree.io/ e crie uma conta gratuita.
+              2. Crie um novo formulário e copie o seu "Endpoint" (ex: https://formspree.io/f/seu-codigo-aqui).
+              3. Substitua o link abaixo onde está escrito 'SEU_ID_DO_FORMSPREE'.
+            -->
+            <form action="https://formspree.io/f/meagjoyw" method="POST" class="formulario-contato">
+                <div class="grupo-formulario">
+                    <label for="nome">Seu Nome:</label>
+                    <input type="text" id="nome" name="name" required placeholder="Digite seu nome completo">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="email">Seu E-mail:</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+
+                <div class="grupo-formulario">
+                    <label for="mensagem">Sua Mensagem / Pedido de Oração:</label>
+                    <textarea id="mensagem" name="message" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+            <div class="rodape-coluna">
+                <h3>Mensagens de Paz</h3>
+                <p>Compartilhando fé, esperança e edificação espiritual por meio da Palavra de Deus.</p>
+            </div>
+            <div class="rodape-coluna">
+                <h3>Navegação</h3>
+                <ul>
+                    <li><a href="home.html">Início</a></li>
+                    <li><a href="home.html#mensagens">Mensagens</a></li>
+                    <li><a href="sobre.html">Sobre Mim</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="privacidade.html">Política de Privacidade</a></li>
+                    <li><a href="termos.html">Termos de Uso</a></li>
+                </ul>
+            </div>
+            <div class="rodape-coluna">
+                <h3>Versículo do Dia</h3>
+                <blockquote cite="https://www.bibliaonline.com.br">
+                    "O Senhor é o meu pastor; nada me faltará." — Salmos 23:1
+                </blockquote>
+            </div>
+        </div>
+        <div class="rodape-direitos">
+            <p>&copy; 2026 Mensagem de Paz e Esperança. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
