@@ -1,0 +1,286 @@
+/* Evita qualquer transbordamento lateral no celular */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+header {
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+/* Estilização básica do container do cabeçalho */
+.header-paz {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+}
+
+.logo {
+    padding: 5px;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    border-radius: 5px;
+}
+
+.header-paz h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2c5282;
+}
+
+/* Organização do menu de navegação */
+nav menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav menu a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #0d47aa;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+nav menu a:hover {
+    color: #0b4685;
+    border-bottom: 2px solid #161616; /* Cria um traço embaixo com 2px de espessura */
+}
+@media (max-width: 768px) {
+    /* Faz o cabeçalho empilhar a logo em cima e o menu embaixo */
+    .header-paz {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    /* Remove a sombra pesada da caixa da logo para ficar mais leve no celular */
+    .logo {
+        text-align: center;
+        padding: 0;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .header-paz h1 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    /* Centraliza e organiza os botões do menu logo abaixo */
+    nav menu, nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav menu a, nav ul a {
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #0d47aa;
+        background-color: #f0f4f8;
+        padding: 8px 12px;
+        border-radius: 20px;
+        text-decoration: none;
+    }
+}
+/* Container geral para centralizar */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo do card de introdução */
+.card-intro {
+    background: rgba(239, 241, 243, 0.95);
+    border-left: 5px solid #f1c40f;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    color: #1a202c;
+}
+
+.card-intro h2 {
+    color: #1a202c;
+}
+
+.card-intro p {
+    color: #2d3748;
+}
+
+.pergunta-destaque {
+    font-style: italic;
+    color: #b7791f; /* Tom de dourado/âmbar mais escuro para garantir legibilidade no fundo claro */
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* Organização dos cards bíblicos lado a lado (Grid corrigido para responsividade) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Estilo individual de cada card de personagem */
+.card-biblia {
+    background: linear-gradient(135deg, #f0f2f5, #adc5e0);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #d69e2e;
+    color: #1a202c;
+}
+
+.card-biblia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(214, 158, 46, 0.3);
+}
+
+.card-biblia h3 {
+    color: #1a202c; /* Alterado para escuro para garantir alta legibilidade */
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-biblia p {
+    color: #2d3748;
+}
+
+.card-biblia h4 {
+    color: #1a365d;
+}
+
+.tag-biblia {
+    font-size: 0.85rem;
+    background-color: rgba(214, 158, 46, 0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #744210;
+}
+
+/* Estilo Único e Diferente para o Último Bloco de Chamada */
+.card-chamada-especial {
+    background: linear-gradient(135deg, #f39c12, #d35400); /* Tons de âmbar e dourado vibrante */
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 30px;
+    box-shadow: 0 0 30px rgba(243, 156, 18, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    animation: pulsarDourado 3s ease-in-out infinite alternate;
+}
+
+.card-chamada-especial h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+}
+
+.card-chamada-especial p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.card-chamada-especial .destaque {
+    color: #fffb00;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Animação suave para o card especial se destacar */
+@keyframes pulsarDourado {
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(243, 156, 18, 0.4); }
+    100% { transform: scale(1.02); box-shadow: 0 0 35px rgba(243, 156, 18, 0.8); }
+}
+
+/* Card de Conclusão */
+.card-conclusao {
+    background: linear-gradient(135deg, #f5f387, #f7e865);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+/* ===================================================
+   RODAPÉ (FOOTER) - ESTILO CELESTIAL DOURADO
+   =================================================== */
+.rodape-paz {
+    color: #ffffff;
+    background: rgba(13, 27, 42, 0.95);
+    border-top: 1px solid rgba(241, 196, 15, 0.3);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    padding: 30px 20px;
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.container-rodape {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.container-rodape p {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Links do Rodapé (Importante para SEO e navegação) */
+.links-rodape {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.links-rodape a {
+    color: #f1c40f;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.links-rodape a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(241, 196, 15, 0.9);
+}
